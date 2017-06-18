@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 echo 'Installing git (if not installed already)'
-install_git
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 
 function install_git {
     sudo apt-get update
@@ -13,6 +15,10 @@ function install_git {
     fi
 }
 
+install_git
+
+
+
 #echo 'configuring password caches'
 
 
@@ -23,5 +29,21 @@ git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 
+# block committing large files
 
+
+# add hooks
+mkdir -p ~/.git-template/hooks
+cp ${DIR}/resources/.git-templates/hooks/* ~/.git-template/hooks
+
+
+# fetch repos
+# TODO - make this generic
+pushd ~/dev
+for git_repo in platform_shopymate sep_shopymate ui_shopymate; do
+    pushd ${git_repo}
+    git fetch
+    popd
+done
+popd
 

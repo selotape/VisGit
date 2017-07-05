@@ -11,3 +11,5 @@ Fully Install and configure git on a new pc, just the way I like it.
 
 ==TODO
 * install https://github.com/junegunn/fzf
+* add clipboard cmd
+* configure bash prompt - https://gist.github.com/miki725/9783474

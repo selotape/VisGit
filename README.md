@@ -7,3 +7,7 @@ Fully Install and configure git on a new pc, just the way I like it.
 * auto-fetch
 * 'no_commit' precommit hook
 * rebase behaviour
+* add chmod +x to all my bin dirs after git pull
+
+==TODO
+* install https://github.com/junegunn/fzf

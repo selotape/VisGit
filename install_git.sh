@@ -36,14 +36,3 @@ git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --grap
 mkdir -p ~/.git-template/hooks
 cp ${DIR}/resources/.git-templates/hooks/* ~/.git-template/hooks
 
-
-# fetch repos
-# TODO - make this generic
-pushd ~/dev
-for git_repo in platform_shopymate sep_shopymate ui_shopymate; do
-    pushd ${git_repo}
-    git fetch
-    popd
-done
-popd
-
